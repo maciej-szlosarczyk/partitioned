@@ -6,7 +6,7 @@ require "partitioned/version"
 Gem::Specification.new do |s|
   s.name           = 'partitioned'
   s.version        = Partitioned::VERSION
-  s.license        = 'New BSD License'
+  s.license        = 'BSD-3-Clause'
   s.date           = '2015-10-02'
   s.summary        = "Postgres table partitioning support for ActiveRecord."
   s.description    = "A gem providing support for table partitioning in ActiveRecord. Support is available for Postgres only. Other features include child table management (creation and deletion) and bulk data creating and updating."
@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
   s.require_path   = 'lib'
   s.homepage       = 'http://github.com/fiksu/partitioned'
 
-  s.add_development_dependency "jquery-rails"
+  s.add_dependency 'pg', '~> 0.18', '>= 0.18.4'
+  s.add_dependency 'bulk_data_methods', '~> 1.1', '>= 1.1.2'
+  s.add_dependency 'activerecord', '~> 4.1', '>= 4.1.13'
 
-  s.add_dependency 'pg'
-  s.add_dependency 'bulk_data_methods'
-  s.add_dependency 'activerecord', '~> 4.1.13'
-  s.add_development_dependency 'rails', '~> 4.1.13'
-  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'jquery-rails', '~> 4.1', '>= 4.1.1'
+  s.add_development_dependency 'rails', '~> 4.1', '>= 4.1.13'
+  s.add_development_dependency 'rspec-rails', '~> 3.4', '>= 3.4.2'
 end

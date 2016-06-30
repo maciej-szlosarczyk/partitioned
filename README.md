@@ -25,6 +25,9 @@ provides streamlined targeted access to the desired data.
 Support for bulk inserts and bulk updates is also provided via
 Partitioned::Base.create_many and Partitioned::Base.update_many.
 
+## Supported Databases
+* Postgres
+
 ## Example
 
 
@@ -199,6 +202,12 @@ turns into the following SQL:
 update employees_partitions.p1 set name = 'Not Keith' where id = 1;
 ```
 
+## Testing
+1. Install development dependencies if missing
+2. Prepare dummy app database `./travis/before.sh`
+3. Run tests `bundle exec rspec`
+4. Cleanup/Delete dummy app database if needed `./travis/cleanup.sh`
+
 ## Contributing
 
 1. Fork it
@@ -206,5 +215,3 @@ update employees_partitions.p1 set name = 'Not Keith' where id = 1;
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-Copyright 2010-2013 fiksu.com, inc, all rights reserved
